@@ -93,6 +93,22 @@ client.on('ready', async () => {
     const boys5 = client.channels.cache.get(anime_room);
     setInterval(() => { boys5.send(anime_avt[Math.floor(Math.random() * anime_avt.length)]) }, 60000)
   
+    if(message.channel.id == "1022840169684013101") {
+    if(message.author.bot) return;
+      setTimeout(() => message.channel.bulkDelete(100), 20000)
+      setTimeout(() => message.channel.send(`https://cdn.discordapp.com/attachments/1027561624158085160/1037542079984840814/unknown.png`), 21000)
+      setTimeout(() => message.channel.send(`
+*Edit your photo or change photo details, in Tokyo,*
+
+\`#change\` عرض صورة افتار حسابك.
+\`#sepia \` لتحويل الصورة من ابيض واسود إلي ساطع.
+\`#color \` لتحويل الصورة من ابيض واسود إلي ملون.
+\`#circle\` يحولك الصورة إلي دائرة.
+\`#banner\` عرض البنر الخاص فيك أو بنر شخص معين.
+\`#avatar\` عرض الأفتار الخاص فيك أو أفتار شخص معين.
+    
+*you can't sned tellonym link here .👌 <#1036286039762931752> *`), 21500)  
+    }
 })
 
 function syncReadFile(filename) {
@@ -102,6 +118,8 @@ function syncReadFile(filename) {
   return arr;
 }
 
+
+/*
 client.on("message", message => {
   if(!message.channel)return;
   if(message.author.bot) return;
@@ -125,7 +143,7 @@ client.on("message", message => {
 
 
 
-
+*/
 
 
 
