@@ -58,6 +58,84 @@ client.on('messageCreate',async msg => {
 });
 
 
+
+
+const { readFileSync } = require("fs");
+//<!-----------------------------  --------------------------------------!>
+const banners_avt = syncReadFile("./banners.txt");
+const fell_banners_avt = syncReadFile("./fell_banners.txt");
+const boys_avt = syncReadFile("./boys.txt");
+const kids_avt = syncReadFile("./kids.txt");
+const anime_avt = syncReadFile("./anime.txt");
+//<!-----------------------------  --------------------------------------!>
+const banners_room = ("1035548413137256528");
+const fell_banners_room = ("1035548444326109294");
+const boys_room = ("1035548474210521129");
+const kids_room = ("1035548516807872554");
+const anime_room = ("1035548544326713374");
+//<!-----------------------------  --------------------------------------!>
+
+
+client.on('ready', async () => {
+  console.log(`Im Ready!! ${client.user.tag}`)
+    const boys1 = client.channels.cache.get(banners_room);
+    setInterval(() => { boys1.send(banners_avt[Math.floor(Math.random() * banners_avt.length)]) }, 60000)
+  
+    const boys2 = client.channels.cache.get(fell_banners_room);
+    setInterval(() => { boys2.send(fell_banners_avt[Math.floor(Math.random() * fell_banners_avt.length)]) }, 60000)
+  
+    const boys3 = client.channels.cache.get(boys_room);
+    setInterval(() => { boys3.send(boys_avt[Math.floor(Math.random() * boys_avt.length)]) }, 60000)
+  
+    const boys4 = client.channels.cache.get(kids_room);
+    setInterval(() => { boys4.send(kids_avt[Math.floor(Math.random() * kids_avt.length)]) }, 60000)
+  
+    const boys5 = client.channels.cache.get(anime_room);
+    setInterval(() => { boys5.send(anime_avt[Math.floor(Math.random() * anime_avt.length)]) }, 60000)
+  
+})
+
+function syncReadFile(filename) {
+  const contents = readFileSync(filename, "utf-8");
+
+  const arr = contents.split(/\r?\n/);
+  return arr;
+}
+
+client.on("message", message => {
+  if(!message.channel)return;
+  if(message.author.bot) return;
+  if(message.channel.id == "1022840169684013101") {
+    setTimeout(() => message.channel.bulkDelete(100), 10000)
+    setTimeout(() => message.channel.send(`https://cdn.discordapp.com/attachments/1027561624158085160/1037542079984840814/unknown.png`), 11000)
+    setTimeout(() => message.channel.send(`
+*Edit your photo or change photo details, in Tokyo,*
+
+\`#change\` عرض صورة افتار حسابك.
+\`#sepia \` لتحويل الصورة من ابيض واسود إلي ساطع.
+\`#color \` لتحويل الصورة من ابيض واسود إلي ملون.
+\`#circle\` يحولك الصورة إلي دائرة.
+\`#banner\` عرض البنر الخاص فيك أو بنر شخص معين.
+\`#avatar\` عرض الأفتار الخاص فيك أو أفتار شخص معين.
+    
+*you can't sned tellonym link here .👌 <#1036286039762931752> *`), 11500)  
+  }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 
 // Crash Bot 
