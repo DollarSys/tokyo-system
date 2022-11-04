@@ -92,8 +92,8 @@ client.on('ready', async () => {
   
     const boys5 = client.channels.cache.get(anime_room);
     setInterval(() => { boys5.send(anime_avt[Math.floor(Math.random() * anime_avt.length)]) }, 60000)
-     
-    let channel = client.channels.cache.get("1022840169684013101")
+})
+   /* let channel = client.channels.cache.get("1022840169684013101")
       setTimeout(() => channel.bulkDelete(100), 20000)
       setTimeout(() => channel.send(`https://cdn.discordapp.com/attachments/1027561624158085160/1037542079984840814/unknown.png`), 21000)
       setTimeout(() => channel.send(`
@@ -106,8 +106,8 @@ client.on('ready', async () => {
 \`#banner\` عرض البنر الخاص فيك أو بنر شخص معين.
 \`#avatar\` عرض الأفتار الخاص فيك أو أفتار شخص معين.
     
-*you can't sned tellonym link here .👌 <#1036286039762931752> *`), 21500)  
-})
+*you can't sned tellonym link here .👌 <#1036286039762931752> *`), 21500) 
+*/
 
 function syncReadFile(filename) {
   const contents = readFileSync(filename, "utf-8");
@@ -116,6 +116,28 @@ function syncReadFile(filename) {
   return arr;
 }
 
+const cd = new Set()
+client.on("message", message => {
+  if(message.author.bot || !message.guild) return;
+  if(cd.has(message.author.id)) return; 
+  if(message.channel.id == "1022840169684013101"){
+    setTimeout(() => channel.bulkDelete(),20000)
+    setTimeout(() => channel.send(`https://cdn.discordapp.com/attachments/1027561624158085160/1037542079984840814/unknown.png`),20100)
+    setTimeout(() => channel.send(`*Edit your photo or change photo details, in Tokyo,*
+\`#change\` عرض صورة افتار حسابك.
+\`#sepia \` لتحويل الصورة من ابيض واسود إلي ساطع.
+\`#color \` لتحويل الصورة من ابيض واسود إلي ملون.
+\`#circle\` يحولك الصورة إلي دائرة.
+\`#banner\` عرض البنر الخاص فيك أو بنر شخص معين.
+\`#avatar\` عرض الأفتار الخاص فيك أو أفتار شخص معين.
+    
+*you can't sned tellonym link here .👌 <#1036286039762931752> *`),20200)
+    cd.add(message.author.id)
+    setTimeout(() => {
+      cd.delete(message.author.id)
+    },20000)
+  }
+})
 
 /*
 client.on("message", message => {
