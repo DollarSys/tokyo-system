@@ -107,7 +107,6 @@ client.on('ready', async () => {
 \`#avatar\` عرض الأفتار الخاص فيك أو أفتار شخص معين.
     
 *you can't sned tellonym link here .👌 <#1036286039762931752> *`), 21500)  
-    })
 })
 
 function syncReadFile(filename) {
