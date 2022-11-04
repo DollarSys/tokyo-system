@@ -92,12 +92,11 @@ client.on('ready', async () => {
   
     const boys5 = client.channels.cache.get(anime_room);
     setInterval(() => { boys5.send(anime_avt[Math.floor(Math.random() * anime_avt.length)]) }, 60000)
-  
-    if(message.channel.id == "1022840169684013101") {
-    if(message.author.bot) return;
-      setTimeout(() => message.channel.bulkDelete(100), 20000)
-      setTimeout(() => message.channel.send(`https://cdn.discordapp.com/attachments/1027561624158085160/1037542079984840814/unknown.png`), 21000)
-      setTimeout(() => message.channel.send(`
+     
+    let channel = client.channels.cache.get("1022840169684013101")
+      setTimeout(() => channel.bulkDelete(100), 20000)
+      setTimeout(() => channel.send(`https://cdn.discordapp.com/attachments/1027561624158085160/1037542079984840814/unknown.png`), 21000)
+      setTimeout(() => channel.send(`
 *Edit your photo or change photo details, in Tokyo,*
 
 \`#change\` عرض صورة افتار حسابك.
