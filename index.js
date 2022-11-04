@@ -121,8 +121,8 @@ client.on("message", message => {
   if(message.author.bot || !message.guild) return;
   if(cd.has(message.author.id)) return; 
   if(message.channel.id == "1022840169684013101") {
-    setTimeout(() => message.channel.bulkDelete(), 1000)
-    setTimeout(() => message.channel.send(`https://cdn.discordapp.com/attachments/1027561624158085160/1037542079984840814/unknown.png`), 2000)
+    setTimeout(() => message.channel.bulkDelete(100), 20000)
+    setTimeout(() => message.channel.send(`https://cdn.discordapp.com/attachments/1027561624158085160/1037542079984840814/unknown.png`), 20500)
     setTimeout(() => message.channel.send(`*Edit your photo or change photo details, in Tokyo,*
 \`#change\` عرض صورة افتار حسابك.
 \`#sepia \` لتحويل الصورة من ابيض واسود إلي ساطع.
@@ -131,11 +131,11 @@ client.on("message", message => {
 \`#banner\` عرض البنر الخاص فيك أو بنر شخص معين.
 \`#avatar\` عرض الأفتار الخاص فيك أو أفتار شخص معين.
     
-*you can't sned tellonym link here .👌 <#1036286039762931752> *`), 2200)
+*you can't sned tellonym link here .👌 <#1036286039762931752> *`), 21000)
     cd.add(message.author.id)
     setTimeout(() => {
       cd.delete(message.author.id)
-    }, 2400)
+    }, 20000)
   }
 })
 
