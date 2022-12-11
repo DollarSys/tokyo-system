@@ -126,6 +126,13 @@ client.on("message", message => {
   }
 })
 
+client.on("messageCreate", message => {
+  if(message.author.bot)return;
+  if(message.channelId == "1045966137025908808") {
+    if(!message.content.startsWith("https://tellonym.me/")) return message.reply("روابط تيل فقط..").then(msg => setTimeout(() => msg.delete(), 2000))
+    message.delete();
+  }
+})
 
 
 
