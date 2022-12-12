@@ -152,4 +152,4 @@ console.log(err.stack ? err.stack : err)
 });
  
 
-client.login(token)
+client.login(process.env.token).catch(err => console.log('Token Is Not Working !'))
