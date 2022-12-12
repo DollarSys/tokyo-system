@@ -106,7 +106,7 @@ const cd = new Set()
 client.on("message", message => {
   if(message.author.bot || !message.guild) return;
   if(cd.has(message.author.id)) return; 
-  if(message.channel.id == "1022840169684013101") {
+  if(message.channel.id == "1045966094357250048") {
     setTimeout(() => message.channel.bulkDelete(100), 20000)
     setTimeout(() => message.channel.send(`https://cdn.discordapp.com/attachments/1049400721046515712/1051640587280977960/1.png`), 20500)
     setTimeout(() => message.channel.send(`*Edit your photo or change photo details, in Rolex Gif,*
