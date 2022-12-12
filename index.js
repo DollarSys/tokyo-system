@@ -77,7 +77,7 @@ const anime_room = ("1045967025736011776");
 client.on('ready', async () => {
   console.log(`Im Ready!! ${client.user.tag}`);
   client.user.setStatus("dnd");
-  client.user.setActivity("Tokyo,");
+  client.user.setActivity("Rolex.");
     const boys1 = client.channels.cache.get(banners_room);
     setInterval(() => { boys1.send(banners_avt[Math.floor(Math.random() * banners_avt.length)]) }, 60000)
   
